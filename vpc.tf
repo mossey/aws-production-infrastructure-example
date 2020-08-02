@@ -66,6 +66,10 @@ resource "aws_subnet" "connectivity_subnet" {
 }
 
 
+
+
+
+
 resource "aws_internet_gateway" "demo" {
   vpc_id = aws_vpc.compute_vpc.id
 
