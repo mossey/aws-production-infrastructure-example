@@ -96,7 +96,6 @@ resource "aws_vpc_peering_connection" "compute_database_peering_connection" {
   vpc_id        = aws_vpc.database_vpc.id
   auto_accept   = true
 
-
   tags = {
     "Name" = "compute-database-peering-connection"
   }
