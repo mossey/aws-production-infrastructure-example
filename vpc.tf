@@ -15,7 +15,7 @@ resource "aws_vpc" "compute_vpc" {
   )
 }
 
-resource "aws_subnet" "demo" {
+resource "aws_subnet" "compute_subnet" {
   count = 3
 
   availability_zone       = data.aws_availability_zones.available.names[count.index]
@@ -48,6 +48,6 @@ resource "aws_route_table" "demo" {
 resource "aws_route_table_association" "demo" {
   count = 2
 
-  subnet_id      = aws_subnet.demo.*.id[count.index]
+  subnet_id      = aws_subnet.compute_subnet.*.id[count.index]
   route_table_id = aws_route_table.demo.id
 }
