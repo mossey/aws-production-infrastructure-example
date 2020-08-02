@@ -90,3 +90,28 @@ resource "aws_route_table_association" "demo" {
   route_table_id = aws_route_table.demo.id
 }
 
+
+resource "aws_vpc_peering_connection" "compute_database_peering_connection" {
+  peer_vpc_id   = aws_vpc.compute_vpc.id
+  vpc_id        = aws_vpc.database_vpc.id
+  auto_accept   = true
+
+
+  tags = {
+    "Name" = "compute-database-peering-connection"
+  }
+
+  
+}
+
+resource "aws_vpc_peering_connection" "compute_connectivity_peering_connection" {
+  peer_vpc_id   = aws_vpc.compute_vpc.id
+  vpc_id        = aws_vpc.connectivity_vpc.id
+  auto_accept   = true
+
+  
+  tags = {
+    Name = "compute-connectivity-peering-connection"
+  }
+  
+}
