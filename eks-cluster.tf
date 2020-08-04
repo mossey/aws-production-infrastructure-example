@@ -58,7 +58,7 @@ resource "aws_security_group_rule" "demo-cluster-ingress-workstation-https" {
   protocol          = "tcp"
   security_group_id = aws_security_group.demo-cluster.id
   to_port           = 443
-  type              = "ingress"
+  type              = "ingress" 
 }
 
 resource "aws_eks_cluster" "demo" {
