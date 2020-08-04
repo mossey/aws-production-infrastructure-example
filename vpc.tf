@@ -155,7 +155,7 @@ resource "aws_vpc_peering_connection" "database_connectivity_peering_connection"
 
   
   tags = {
-    Name = "compute-connectivity-peering-connection"
+    Name = "database-connectivity-peering-connection"
   }
   
 }

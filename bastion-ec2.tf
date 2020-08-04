@@ -1,6 +1,6 @@
 
 resource "aws_instance" "bastion" {
-  ami                         = "ami-067f5c3d5a99edc80"
+  ami                         = "ami-0a13d44dccf1f5cf6"
   key_name                    = "${aws_key_pair.bastion_key.key_name}"
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.connectivity_subnet.0.id
